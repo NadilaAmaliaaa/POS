@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Food & Beverages</title>
 </head>
 <body>
-    <h1>Selamat Datang di Home</h1>
+    <h1>Ini halaman Kategori Product Food & Beverages</h1>
 </body>
 </html>

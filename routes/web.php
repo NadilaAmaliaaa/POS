@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [HomeController::class, 'index']);
+// Route::get('/products', [ProductsController::class, 'index']);
+
+Route::prefix('/category')->group(function () {
+    Route::get('/food-beverage', [ProductsController::class, 'food']);
+    Route::get('/beauty-health', [ProductsController::class, 'beauty']);
+    Route::get('/baby-kid', [ProductsController::class, 'kid']);
+    Route::get('/home-care', [ProductsController::class, 'home']);
 });
+
+Route::get('/profil/{id}/{name}', [UserController::class, 'profil']);
+Route::get('/transaction/{transaksi?}', [TransactionController::class, 'transaksi']);
